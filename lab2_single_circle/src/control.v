@@ -1,4 +1,5 @@
 module control #(
+  //各种指令类型的opcode
     localparam OP_R    = 7'b0110011,
     localparam OP_I    = 7'b0010011,
     localparam OP_LOAD = 7'b0000011,
@@ -9,14 +10,14 @@ module control #(
     localparam OP_JALR = 7'b1100111
 )
 (
-  input wire[31:0] inst,
-  output reg[1:0] npc_op,
-  output reg rf_we,
-  output reg[1:0] rf_wsel,
-  output reg[2:0] sext_op,
-  output reg alub_sel,
-  output reg dram_we,
-  output reg[3:0] alu_op
+  input wire[31:0] inst,  //当前指令
+  output reg[1:0] npc_op, //给出npc的op
+  output reg rf_we,       //给出寄存器写使能
+  output reg[1:0] rf_wsel,//给出寄存器的数据选择信号
+  output reg[2:0] sext_op,//给出立即数扩展信号
+  output reg alub_sel,    //给出alu第二个运算数据的数据选择信号
+  output reg dram_we,     //给出DRAM的写使能
+  output reg[3:0] alu_op  //给出ALU的计算类型信号
 );
 
 wire[6:0] opcode = inst[6:0];

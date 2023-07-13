@@ -1,7 +1,7 @@
 module sext(
-  input wire[31:0] din,
-  input wire[2:0] op,
-  output reg[31:0] ext
+  input wire[31:0] din, //当前指令
+  input wire[2:0] op,   //立即数扩展类型信号
+  output reg[31:0] ext  //输出的立即数
 );
 
 //SEXT

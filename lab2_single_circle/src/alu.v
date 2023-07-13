@@ -1,11 +1,11 @@
 module alu(
-  input wire[31:0] rs1,
-  input wire[31:0] rs2,
-  input wire[31:0] imm,
-  input wire alub_sel,
-  input wire[3:0] alu_op,
-  output wire[31:0] alu_c,
-  output wire alu_f
+  input wire[31:0] rs1, //rD1
+  input wire[31:0] rs2, //rD2
+  input wire[31:0] imm, //立即数
+  input wire alub_sel,  //第二个数据的选择信号
+  input wire[3:0] alu_op,   //ALU运算类型信号
+  output wire[31:0] alu_c,  //ALU结果
+  output wire alu_f     //用于B型指令的比较结果标志
 );
 
   wire[31:0] dataA = rs1;
