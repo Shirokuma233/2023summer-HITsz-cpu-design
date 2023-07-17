@@ -22,7 +22,7 @@ module MEM_WB(
 
 always @(posedge clk or posedge rst) begin
   if(rst) WB_rf_we <= 0;
-  else WB_rf_we <= MEM_rf_we; //直接继承MEM阶段信号
+  else WB_rf_we <= MEM_rf_we;
 end
 
 always @(posedge clk or posedge rst) begin

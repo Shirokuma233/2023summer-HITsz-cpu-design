@@ -1,3 +1,4 @@
+`include "defines.vh"
 module control #(
   //各种指令类型的opcode
     localparam OP_R    = 7'b0110011,

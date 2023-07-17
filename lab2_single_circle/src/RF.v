@@ -1,3 +1,4 @@
+`include "defines.vh"
 module RF(
   input wire clk,     //时钟
   input wire[4:0] rR1,//一号寄存器地址

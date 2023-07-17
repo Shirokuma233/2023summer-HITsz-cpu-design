@@ -1,3 +1,4 @@
+`include "defines.vh"
 module sext(
   input wire[31:0] din, //当前指令
   input wire[2:0] op,   //立即数扩展类型信号

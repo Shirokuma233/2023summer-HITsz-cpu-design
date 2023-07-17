@@ -7,7 +7,13 @@ module pc(
 );
 
 always @(posedge clk or posedge rst) begin
-  if(rst) pc <= 0;
+  if(rst) begin
+    `ifdef RUN_TRACE
+      pc<=-4;
+    `else
+      pc<=0;
+    `endif
+  end
   else pc <= din;
 end
 

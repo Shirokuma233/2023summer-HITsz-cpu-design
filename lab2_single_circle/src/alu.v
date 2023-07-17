@@ -1,3 +1,4 @@
+`include "defines.vh"
 module alu(
   input wire[31:0] rs1, //rD1
   input wire[31:0] rs2, //rD2

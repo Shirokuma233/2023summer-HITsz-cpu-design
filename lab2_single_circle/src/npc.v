@@ -1,3 +1,4 @@
+`include "defines.vh"
 module npc(
   input wire[1:0] op, //npc_op控制npc的选择
   input wire br,      //B型指令跳转标志，1是跳转

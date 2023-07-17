@@ -27,14 +27,14 @@ module ID_EX(
   output reg[31:0] EX_rD2,
   output reg[31:0] EX_ext,
 
-  input wire control_hazard,//控制冒险标志 two hazards have the same flush
-  input wire data_hazard    //数据冒险标志
+  input wire control_hazard,//two hazard have the same flush
+  input wire data_hazard
 );
 
 always @(posedge clk or posedge rst) begin
   if(rst) EX_npc_op<=0;
-  else if(control_hazard | data_hazard) EX_npc_op<=0;//发生控制冒险和数据冒险都是清空信号
-  else EX_npc_op <= ID_npc_op; //正常情况下直接继承ID阶段信号
+  else if(control_hazard | data_hazard) EX_npc_op<=0;
+  else EX_npc_op <= ID_npc_op;
 end
 
 always @(posedge clk or posedge rst) begin

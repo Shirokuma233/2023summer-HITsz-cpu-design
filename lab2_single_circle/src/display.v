@@ -1,3 +1,4 @@
+`include "defines.vh"
 module display(
   input wire clk,
   input wire rst,
@@ -22,8 +23,8 @@ always @(posedge clk or posedge rst) begin
   else mydata<=mydata;
 end
 
-//2ms周期计时�???
-always @(posedge clk or posedge rst) begin//分频�???2ms
+//2ms周期计时�???
+always @(posedge clk or posedge rst) begin//分频�???2ms
   if(rst) cnt<=0;
   else if(cnt == T) cnt <= 0;
   else cnt <= cnt + 1'd1;

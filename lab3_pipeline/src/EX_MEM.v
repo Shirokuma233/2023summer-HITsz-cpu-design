@@ -24,7 +24,7 @@ module EX_MEM(
 
 always @(posedge clk or posedge rst) begin
   if(rst) MEM_ram_we <= 0;
-  else MEM_ram_we <= EX_ram_we; //直接继承EX阶段信号
+  else MEM_ram_we <= EX_ram_we;
 end
 
 always @(posedge clk or posedge rst) begin

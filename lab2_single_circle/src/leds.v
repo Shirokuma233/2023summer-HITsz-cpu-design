@@ -1,3 +1,4 @@
+`include "defines.vh"
 module leds(
   input wire rst,
   input wire[31:0] data,
